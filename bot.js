@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
+const prefix = "-";
 
 client.on('ready', () => {
   console.log('firegamer');
@@ -8,7 +9,6 @@ client.on('ready', () => {
  
 
 client.on('message', message => {
-  var prefix = "-";
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
   var argresult = args.join(' ');
@@ -38,10 +38,10 @@ if (message.content.startsWith(prefix + 'st')) {
      console.log('test' + argresult);
     message.channel.sendMessage(`Streaming: **${argresult}**`)
 } 
-if (message.content.startsWith(prefix + 'setplay')) {
+if (message.content.startsWith(prefix + 'sp')) {
   client.user.setGame(argresult);
      console.log('test' + argresult);
-    message.channel.sendMessage(`Playing: **${argresult}`)
+    message.channel.sendMessage(`Playing: **${argresult}**`)
 } 
 
 
