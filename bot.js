@@ -7,7 +7,6 @@ client.on('ready', () => {
  
 });
  
-
 client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
   var args = message.content.split(' ').slice(1);
@@ -26,6 +25,13 @@ client.on('message', message => {
   client.user.setActivity(argresult, {type: 'LISTENING'})
      console.log('test' + argresult);
     message.channel.sendMessage(`LISTENING Now: **${argresult}**`)
+} 
+
+
+if (message.content.startsWith(prefix + 'sn')) {
+  client.user.setUsername(argresult).then
+      message.channel.sendMessage(`Username Changed To **${argresult}**`)
+  return message.reply("You Can change the username 2 times per hour");
 } 
 
 if (message.content.startsWith(prefix + 'sa')) {
